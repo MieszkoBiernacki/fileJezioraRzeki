@@ -13,16 +13,13 @@ public class ConsoleManager {
 
         while (true) {
 
-            String datai = scanner.nextLine().toLowerCase();
+            String datai = scanner.nextLine();
 
-            if (datai.contains("jezioro")) {
-                fileManager.readFileManager("jezioro");
-                datai = "";
-            } else if (datai.equals("rzeka")) {
-                fileManager.readFileManager("rzeka");
-                datai = "";
-            } else if (datai.equals("koniec")) {
+            if (datai.contains("koniec")) {
                 break;
+            } else {
+                fileManager.readFileManager(datai);
+                datai = "null";
             }
         }
     }
